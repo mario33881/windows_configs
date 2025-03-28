@@ -1,0 +1,81 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+Plug 'machakann/vim-highlightedyank'
+" use cs<symbol1><symbol2> to replace the surrounding <symbol1> with <symbol2>
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set easymotion
+set textobj-entire
+set ReplaceWithRegister
+set NERDTree
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set showmode
+" start scrolling when there are less than 10 lines from the screen border
+set scrolloff=10
+
+" incremental search, case insensitive unless the search uses uppercase letters, highlight all results
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
+
+" show line numbers
+set nu
+
+" global clipboard
+set clipboard=unnamedplus
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+" easymotion
+map <leader>f <Plug>(easymotion-f)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+
+let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+
+" nerdtree
+nnoremap <leader>p :NERDTree<cr>
+
+" IDE
+map <leader>d <Action>(Debug)
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>c <Action>(Stop)
+
+map <leader>r <Action>(RenameElement)
+map <leader>e <Action>(GotoNextError)
+map <c-h> <Action>(PreviousTab)
+map <c-l> <Action>(NextTab)
+map <leader>o <Action>(FileStructurePopup)
+nmap gi <Action>(GotoImplementation)
+nmap gf <Action>(Forward)
+nmap gb <Action>(Back)
+map <leader>i <Action>(QuickImplementations)
+map <leader>s <Action>(ShowHoverInfo)
+map <leader>q <Action>(CloseContent)
+
+" Exit insert mode with jj
+set timeoutlen=500
+inoremap jj <Esc>
+
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
+" Make the visual indentation repeatable
+vnoremap < <gv
+vnoremap > >gv

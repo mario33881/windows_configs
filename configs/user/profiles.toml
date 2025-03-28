@@ -1,0 +1,33 @@
+version = "1"
+
+[global]
+log = "{{ .Env.HOME | or .Env.USERPROFILE }}/resticprofile.log"
+
+[default]
+repository = "local:L:\\restic_backup"
+password-file = "password.txt"
+run-after-fail = "call {{ .Env.HOME | or .Env.USERPROFILE }}/restic_bk_fail.bat"
+run-before = "call {{ .Env.HOME | or .Env.USERPROFILE }}/restic_bk_before.bat"
+run-after = "call {{ .Env.HOME | or .Env.USERPROFILE }}/restic_bk_after.bat"
+
+[default.backup]
+verbose = true
+source = ["<src1>"]
+
+schedule = [ "Sat *-*-* 18:34:00" ]
+
+schedule-permission = "user"
+
+check-after = true
+
+[default.retention]
+before-backup = false
+after-backup = true
+
+keep-within = "40d"
+keep-tag = ["forever"]
+
+prune = true
+
+[default.check]
+read-data = true
