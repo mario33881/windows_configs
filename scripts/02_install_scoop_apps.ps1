@@ -16,12 +16,12 @@ scoop install extras/musikcube extras/vlc
 Write-Output ""
 
 Write-Output "Installing utilities..."
-scoop install 7zip extras/dangerzone extras/everything extras/everythingtoolbar extras/keepassxc  extras/notepadplusplus extras/sharex
+scoop install 7zip extras/dangerzone extras/everything extras/everythingtoolbar extras/keepassxc extras/notepadplusplus extras/sharex
 scoop install extras/etcher extras/kdeconnect extras/kdenlive extras/obs-studio extras/pdfarranger
 Write-Output ""
 
 Write-Output "Installing CLI tools..."
-scoop install bat clink exiftool fd ffmpeg fzf extras/psfzf less nmap ripgrep sed sudo wget windows-terminal yt-dlp zoxide
+scoop install bat clink exiftool fd ffmpeg fzf extras/psfzf gnupg less nmap ripgrep sed sudo wget windows-terminal yt-dlp zoxide
 Write-Output ""
 
 Write-Output "Installing development tools..."

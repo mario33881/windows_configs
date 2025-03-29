@@ -61,6 +61,18 @@ git config --global core.eol lf
 
 The first time the credential helper window appears, choose "manager" and "always use this option".
 
+### Signing commits for GitHub
+
+1. Create a [GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
+2. [Add the key](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account) to your GitHub account
+3. [Tell git](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) to use your key
+
+If you get the "no secret key" error, you might need to tell git where the gpg executable is located with:
+
+```powershell
+git config --global gpg.program "<path_to_gpg_root_dir>\bin\gpg.exe"
+```
+
 ## JetBrains IDEs
 
 - Install ideavim plugin (which also works for Webstorm, CLion, ...)

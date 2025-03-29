@@ -133,7 +133,7 @@ winget install Malwarebytes.Malwarebytes
 ### CLI tools
 
 ```powershell
-scoop install bat clink exiftool fd ffmpeg fzf extras/psfzf less nmap ripgrep sed sudo wget windows-terminal yt-dlp zoxide
+scoop install bat clink exiftool fd ffmpeg fzf extras/psfzf gnupg less nmap ripgrep sed sudo wget windows-terminal yt-dlp zoxide
 ```
 
 - bat: shows file content with syntax highlighting
@@ -143,6 +143,7 @@ scoop install bat clink exiftool fd ffmpeg fzf extras/psfzf less nmap ripgrep se
 - ffmpeg: handles audio and video streams
 - fzf: interactive fuzzy finder
 - psfzf: allows to use fzf in powershell
+- gnupg: generates GPG keys. Useful, for example, to sign git commits
 - less: allows to scroll long output text (pipe text to it using `<command> | less`)
 - nmap: find IPs and open ports of hosts (useful when there is dynamic IP assignment or there are firewall issues)
 - ripgrep: searches text in files
