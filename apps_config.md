@@ -47,7 +47,7 @@ These scripts are run when powershell starts. It setups powershell to:
 
 ## GIT
 
-Setup the credentials manager, the email and the username:
+Setup the credentials manager, the email and the username, LF line endings, merge strategy:
 
 ```powershell
 git config --global credential.helper manager
@@ -55,8 +55,12 @@ git config --global credential.helper manager
 git config --global user.name <username>
 git config --global user.email <email>
 
+# line ending
 git config --global core.autocrlf false
 git config --global core.eol lf
+
+# merge strategy
+git config pull.rebase false
 ```
 
 The first time the credential helper window appears, choose "manager" and "always use this option".
