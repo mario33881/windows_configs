@@ -50,7 +50,12 @@ git config --global credential.helper manager
 
 git config --global user.name <username>
 git config --global user.email <email>
+
+git config --global core.autocrlf false
+git config --global core.eol lf
 ```
+
+The first time the credential helper window appears, choose "manager" and "always use this option".
 
 ## JetBrains IDEs
 
