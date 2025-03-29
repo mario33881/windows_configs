@@ -9,10 +9,10 @@
 #umask 022
 
 # if running bash
-if [ -n "$BASH_VERSION" ]; then
+if [ -n "$BASH_VERSION" ] ; then
     # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
+    if [ -f "$HOME/.bashrc" ] ; then
+	    . "$HOME/.bashrc"
     fi
 fi
 
@@ -26,47 +26,45 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# --- FZF integrations. Commands taken from https://github.com/junegunn/fzf/wiki/Examples
+
 # fe [FUZZY PATTERN] - Open the selected file with the default editor
 #   - Bypass fuzzy finder if there's only one match (--select-1)
 #   - Exit if there's no match (--exit-0)
 fe() {
-  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+    IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+    [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
 # fd - cd to selected directory
 fd() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
+    local dir
+    dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m) && cd "$dir"
 }
 
 # fzf history
 bind '"\C-r": "\C-x1\e^\er"'
-bind -x '"\C-x1": __fzf_history';
+bind -x '"\C-x1": __fzf_history'
 
-__fzf_history ()
-{
-__ehc $(history | fzf --tac --tiebreak=index | perl -ne 'm/^\s*([0-9]+)/ and print "!$1"')
+__fzf_history() {
+    __ehc $(history | fzf --tac --tiebreak=index | perl -ne 'm/^\s*([0-9]+)/ and print "!$1"')
 }
 
-__ehc()
-{
-if
-        [[ -n $1 ]]
-then
+__ehc() {
+    if [[ -n $1 ]] ; then
         bind '"\er": redraw-current-line'
         bind '"\e^": magic-space'
         READLINE_LINE=${READLINE_LINE:+${READLINE_LINE:0:READLINE_POINT}}${1}${READLINE_LINE:+${READLINE_LINE:READLINE_POINT}}
         READLINE_POINT=$(( READLINE_POINT + ${#1} ))
-else
+    else
         bind '"\er":'
         bind '"\e^":'
-fi
+    fi
 }
 
 # fzf man
 function fman() {
     man -k . | fzf -q "$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man' | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
 }
+
+# ---
