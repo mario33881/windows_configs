@@ -2,7 +2,17 @@
 
 > NOTE: make sure that all the config files have correct paths (correct drive, correct user, ...).
 
-## Wallpaper
+## Windows
+
+### Disable suspend
+
+Disable computer suspend: avoid the risk of blocking long downloads/installs/scripts.
+
+### Disable system sounds
+
+Disable system sounds by opening the audio mixer and setting its volume to zero.
+
+### Wallpaper
 
 Set the [wallpaper](configs/user/wallpaper.png).
 
