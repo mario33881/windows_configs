@@ -16,6 +16,10 @@ Disable system sounds by opening the audio mixer and setting its volume to zero.
 
 Set the [wallpaper](configs/user/wallpaper.png).
 
+### Night light
+
+Enable night light to reduce the amount of blue light emitted by the screen at night time.
+
 ## Conda
 
 To initialize conda when you open powershell, run the following command:
