@@ -1,6 +1,12 @@
 # Applications
 
-> NOTE: to install all the applications, use the [install_apps.ps1](scripts/install_apps.ps1) script file
+> NOTE: to install all the applications using powershell scripts:
+>
+> - Open powershell and execute the `Set-ExecutionPolicy Bypass -Scope Process -Force` command to allow scripts to run
+> - use the [01_setup_scoop.ps1](scripts/01_setup_scoop.ps1) script file to install scoop, git and the 'extras' bucket. DO NOT RUN AS ADMIN.
+> - use the [02_install_scoop_apps.ps1](scripts/02_install_scoop_apps.ps1) script to install apps using scoop. DO NOT RUN AS ADMIN.
+> - use the [03_install_winget_apps.ps1](scripts/03_install_winget_apps.ps1) script to install apps using winget. To avoid UAC, run as administrator.
+> - use the [04_install_wsl.ps1](scripts/04_install_wsl.ps1) script to install WSL.
 
 ## Package managers
 
