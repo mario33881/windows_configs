@@ -1,5 +1,20 @@
 # Preliminary steps
 
+## (optional) Disconnect other drives
+
+If you had a Windows install on another drive, Windows will use that old drive's boot partition for the new install.
+
+To make sure that the boot partition is created in the new drive, disconnect all the other drives temporarily.
+
+> You can reconnect the drives after installing Windows.
+
+This also makes sure that you don't accidentaly delete files stored in those drives.
+
+## BIOS / UEFI settings
+
+- Enable XMP (or equivalent) to take advantage of all the RAM speed
+- Enable intel virtualization and VT-D (or equivalent) to use docker, virtual machines and WSL
+
 ## Install Windows
 
 Procede during the installation normally.
