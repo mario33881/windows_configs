@@ -6,21 +6,30 @@
 
 Set the [wallpaper](configs/user/wallpaper.png).
 
-## Powershell
+## Conda
 
-Copy the files inside the [WindowsPowerShell](configs/user/OneDrive/Documenti/WindowsPowerShell) folder into:
+To initialize conda when you open powershell, run the following command:
 
-```none
-C:\Users\<user>\OneDrive\Documenti\WindowsPowerShell
+```powershell
+conda init
 ```
 
-> Replace `<user>` with your username
+## Powershell
+
+Run the following command to check where the configuration files are located:
+
+```powershell
+$profile | select *
+```
+
+Copy the configuration inside the [WindowsPowerShell](configs/user/Documents/WindowsPowerShell) folder into one of the configuration files.
 
 These scripts are run when powershell starts. It setups powershell to:
 
 - use fzf and psfzf when pressing Ctrl+r to search in the commands history
 - initialize zoxide. Use the z command to traverse paths instead of cd
 - initialize conda to manage python environments
+  > Use the `conda init` command to add the conda initialization code inside your configuration.
 
 ## GIT
 
