@@ -6,6 +6,10 @@ Write-Output "Installing utilities..."
 winget install Malwarebytes.Malwarebytes
 Write-Output ""
 
+Write-Output "Installing CLI tools..."
+winget install Microsoft.PowerShell
+Write-Output ""
+
 Write-Output "Installing virtualization tools..."
 winget install Docker.DockerDesktop Oracle.VirtualBox
 Write-Output ""

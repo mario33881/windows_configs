@@ -22,6 +22,7 @@ Write-Output ""
 
 Write-Output "Installing CLI tools..."
 scoop install bat clink exiftool fd ffmpeg fzf extras/psfzf gnupg less nmap ripgrep sed sudo wget windows-terminal yt-dlp zoxide
+scoop install nerd-fonts/JetBrains-Mono
 Write-Output ""
 
 Write-Output "Installing development tools..."

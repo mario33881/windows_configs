@@ -77,7 +77,7 @@ scoop install extras/vcredist2008 extras/vcredist2022
 ### Browser
 
 ```powershell
-scoop install extras/googlechrome extras/firefox 
+scoop install extras/googlechrome extras/firefox
 ```
 
 - googlechrome: Google Chrome. Used for development purposes
@@ -134,6 +134,9 @@ winget install Malwarebytes.Malwarebytes
 
 ```powershell
 scoop install bat clink exiftool fd ffmpeg fzf extras/psfzf gnupg less nmap ripgrep sed sudo wget windows-terminal yt-dlp zoxide
+scoop install nerd-fonts/JetBrains-Mono
+
+winget install Microsoft.PowerShell
 ```
 
 - bat: shows file content with syntax highlighting
@@ -153,6 +156,8 @@ scoop install bat clink exiftool fd ffmpeg fzf extras/psfzf gnupg less nmap ripg
 - windows-terminal: better terminal for Windows. Allows to open multiple tabs. Can handle command prompts, powershell, WSL, ...
 - yt-dlp: download videos. It also allows to convert them into audio files
 - zoxide: intelligent alternative to cd. Fast path traversal thanks to its history of paths
+- JetBrains Mono: JetBrains font for CLI shells
+- PowerShell: install the latest version of PowerShell (has suggestions based on command history out of the box)
 
 ### Developer tools
 

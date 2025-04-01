@@ -12,4 +12,8 @@ Write-Output "Adding 'extras' bucket..."
 scoop bucket add extras
 Write-Output ""
 
+Write-Output "Adding 'nerd-fonts' bucket..."
+scoop bucket add nerd-fonts
+Write-Output ""
+
 Write-Output "Done"
