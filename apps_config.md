@@ -28,6 +28,16 @@ To initialize conda when you open powershell, run the following command:
 conda init
 ```
 
+## Command prompt
+
+Run the following command using the command prompt to setup clink:
+
+```batch
+clink autorun install
+```
+
+This command will add suggestions, tab completion, ... To the command prompt.
+
 ## Powershell
 
 Run the following command to check where the configuration files are located:
@@ -91,6 +101,18 @@ Favourite shortcuts:
 - space + e: go to next error
 - space + i: show implementation of hovered function
 - space + s: show definition of hovered function
+
+## Node.Js
+
+To manage multiple node versions we can use nvm:
+
+```powershell
+nvm install <version>
+# switch current version to any installed version
+nvm use <version>
+```
+
+This will install the correct version and set it as the version to use when calling the `node` command.
 
 ## Backups
 
